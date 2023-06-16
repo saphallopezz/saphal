@@ -14,6 +14,13 @@ $(document).ready(function(){
             $('.scroll-up-btn').removeClass("show");
         }
     });
+// Redirect after successful login
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    // User is signed in, redirect to the desired page
+    window.location.href = "index.html";
+  }
+});
 
 
     // Get references to the login and signup forms
