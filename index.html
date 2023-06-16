@@ -29,6 +29,20 @@
     measurementId: "G-PE25QELWE6"
   };
 
+  <!-- Login form -->
+<form id="login-form">
+  <input type="email" id="login-email" placeholder="Email">
+  <input type="password" id="login-password" placeholder="Password">
+  <button type="submit">Log In</button>
+</form>
+
+<!-- Signup form -->
+<form id="signup-form">
+  <input type="email" id="signup-email" placeholder="Email">
+  <input type="password" id="signup-password" placeholder="Password">
+  <button type="submit">Sign Up</button>
+</form>
+
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
