@@ -15,6 +15,57 @@ $(document).ready(function(){
         }
     });
 
+
+    // Get references to the login and signup forms
+var loginForm = document.getElementById('login-form');
+var signupForm = document.getElementById('signup-form');
+
+// Add event listener for login form submission
+loginForm.addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form from submitting
+
+  // Get user credentials from login form
+  var email = document.getElementById('login-email').value;
+  var password = document.getElementById('login-password').value;
+
+  // Sign in with email and password
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      // Login successful
+      var user = userCredential.user;
+      // Redirect to your website or handle successful login
+    })
+    .catch((error) => {
+      // Login error
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // Handle login error
+    });
+});
+
+// Add event listener for signup form submission
+signupForm.addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form from submitting
+
+  // Get user credentials from signup form
+  var email = document.getElementById('signup-email').value;
+  var password = document.getElementById('signup-password').value;
+
+  // Sign up with email and password
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      // Signup successful
+      var user = userCredential.user;
+      // Redirect to your website or handle successful signup
+    })
+    .catch((error) => {
+      // Signup error
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // Handle signup error
+    });
+});
+
     // slide-up script
     $('.scroll-up-btn').click(function(){
         $('html').animate({scrollTop: 0});
