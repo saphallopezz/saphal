@@ -62,6 +62,19 @@
       var loginForm = document.getElementById('login-form');
       signupForm.style.display = 'none';
       loginForm.style.display = 'block';
+    function login() {
+      // Perform login logic here
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      
+      // Validate login credentials
+      if (username === 'your_username' && password === 'your_password') {
+        // Successful login, redirect to your website
+        window.location.href = 'www.saphallamsal.com.np';
+      } else {
+        // Invalid credentials, display error message
+        document.getElementById('error-message').innerText = 'Invalid username or password';
+      }   
     }
   </script>
 </head>
